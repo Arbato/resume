@@ -1,0 +1,151 @@
+\documentclass[paper=letter,fontsize=11pt]{scrartcl} % KOMA-article class
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+\usepackage[colorlinks=true,
+linkcolor=blue,
+urlcolor=blue]{hyperref}
+\usepackage{float}
+\usepackage{etaremune}
+\usepackage{wrapfig}
+\usepackage{attachfile}
+
+\frenchspacing
+\pagestyle{empty}
+
+\setlength\topmargin{0pt}
+\addtolength\topmargin{-\headheight}
+\addtolength\topmargin{-\headsep}
+\setlength\oddsidemargin{0pt}
+\setlength\textwidth{\paperwidth}
+\addtolength\textwidth{-2in}
+\setlength\textheight{\paperheight}
+\addtolength\textheight{-2in}
+\usepackage{layout}
+
+\usepackage{sectsty}
+\sectionfont{%
+    \usefont{OT1}{phv}{b}{n}%
+    \sectionrule{0pt}{0pt}{-5pt}{1pt}}
+
+%%% Macros
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}
+\newcommand{\sepspace}{\vspace*{1em}}
+
+\newcommand{\MyName}[1]{
+        \Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+        \par \normalsize \normalfont}
+
+\newcommand{\MySlogan}[1]{
+        \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+        \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[2]{\section*{\uppercase{#1} \small \normalfont #2}}
+
+\newcommand{\PersonalEntry}[2]{\small
+        \noindent\hangindent=2em\hangafter=0
+        \parbox{\spacebox}{
+        \textit{#1}}
+        \small\hspace{1.5em} #2 \par}
+
+\newcommand{\SkillsEntry}[2]{
+        \noindent\hangindent=2em\hangafter=0
+        \parbox{\spacebox}{
+        \textit{#1}}
+        \hspace{1.5em} #2 \par}
+
+\newcommand{\EducationEntry}[4]{
+        \noindent \textbf{#1} \hfill
+        \colorbox{White}{%
+            \parbox{6em}{%
+            \hfill\color{Black}#2}} \par
+        \noindent \textit{#3} \par
+        \noindent\hangindent=2em\hangafter=0 \small #4
+        \normalsize \par}
+
+\newcommand{\WorkEntry}[5]{
+        \noindent \textbf{#1}
+        \noindent \small \textit{#2}
+        \hfill
+        \colorbox{White}{%
+            \parbox{6em}{%
+            \hfill\color{Black}#3}} \par
+        \noindent \textit{#4} \par
+        \noindent\hangindent=2em\hangafter=0 \small #5
+        \normalsize \par}
+
+%%% Begin Document
+\begin{document}
+
+\MyName{Kseniya Arbatova}
+
+\sepspace
+\sepspace
+
+%%% Personal details
+\NewPart{}{}
+
+\PersonalEntry{DOB}{June 16, 2003}
+\PersonalEntry{Email}{\url{kseniya.arbatova@gmail.com}}
+\PersonalEntry{Telegram}{\href{https://t.me/arbatok}{@arbatok}}
+\PersonalEntry{GitHub}{\url{https://github.com/Arbato}}
+
+%%% Objective
+\NewPart{Objective}{}
+
+Backend developer at the start of my career, looking for an internship where I can contribute to a real product while learning from a strong engineering team. Comfortable with Java/Spring Boot, Python, and PostgreSQL; full-stack experience through university projects. Currently picking up Ruby on Rails.
+
+%%% Education
+\NewPart{Education}{}
+
+\EducationEntry{B.Sc in Computer Science and Engineering}{2022 -- 2026}{ITMO University, St. Petersburg --- Faculty of Information Technologies and Programming}{Relevant coursework: Algorithms and Data Structures, Discrete Mathematics, Graph Theory, Linear Algebra, Mathematical Analysis, Computer Architecture, Web Development.}
+
+%%% Experience
+\NewPart{Experience}{}
+
+\WorkEntry{Radix Consulting}{Software Engineering Intern}{Jun 2024 -- Oct 2024}{Python}{
+\begin{itemize}
+    \item Wrote Python scripts for processing large JSON datasets, including parsing, transformation, and validation pipelines.
+    \item Automated data-validation workflows that previously had to be done manually.
+    \item Developed new features for an internal corporate Telegram bot.
+\end{itemize}
+}
+
+%%% Skills
+\NewPart{Skills}{}
+
+\begin{itemize}
+    \item \textbf{Languages:} Java, Python, JavaScript, Kotlin, C
+    \item \textbf{Backend:} Spring Boot, Spring Security, REST APIs
+    \item \textbf{Frontend:} React, Redux, HTML, CSS
+    \item \textbf{Databases:} PostgreSQL, SQL
+    \item \textbf{Tools:} Git, Linux/CLI, Vim, Gradle, VisualVM, JConsole
+    \item \textbf{Currently learning:} Ruby, Ruby on Rails
+\end{itemize}
+
+%%% Projects
+\NewPart{Projects}{}
+
+\begin{itemize}
+    \item \textbf{Full-stack web application (Java + React).} Spring Boot 3 backend with REST API, layered architecture (controller / service / repository), and Spring Security authentication. React + Redux frontend with a Canvas-based UI. PostgreSQL for per-user point history. \url{https://github.com/Arbato/lab4-hit-check}
+
+    \item \textbf{Model of an x86-style processor in Python.} Designed a custom assembly language, then built a tokenizer, translator, and a hardwired execution machine that runs the compiled code. \url{https://github.com/Arbato/csa-lab3}
+
+    \item \textbf{Custom memory allocator in C.} Heap allocator with block-splitting, merging strategy, and dynamic heap growth. Covered with a test suite. \emph{(ITMO Computer Architecture course.)}
+\end{itemize}
+
+%%% Languages
+\NewPart{Languages}{}
+
+\begin{itemize}
+    \item \textbf{Russian} --- native
+    \item \textbf{English} --- C2 (lived in the US for several years)
+\end{itemize}
+
+\end{document}
